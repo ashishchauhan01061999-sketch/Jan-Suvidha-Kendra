@@ -1,94 +1,227 @@
-html<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="hi">
 <head>
     <meta charset="UTF-8">
-   <title>Ashish Chauhan की वेबसाइट</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jan Suvidha Kendra - Ashish Chauhan</title>
     <style>
-        body { 
-            font-family: sans-serif; 
-            text-align: center; 
-            background: #eef2f3; 
-            padding: 50px; 
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: #eef2f3;
+            margin: 0;
+            padding: 20px;
         }
-        h1 { 
-            color: #2c3e50; 
+        .container {
+            max-width: 600px;
+            background: white;
+            margin: 40px auto;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 15px rgba(0,0,0,0.1);
         }
-        .name { 
-            color: #e74c3c; 
-            font-weight: bold; 
-            font-size: 30px; 
+        h1 {
+            color: #2c3e50;
+            font-size: 26px;
+            line-height: 1.4;
         }
-        .profile-img { 
-            width: 200px; 
-            height: 200px; 
-            border-radius: 50%; 
+        h2 {
+            color: #007bff;
+            font-size: 24px;
+            margin-top: 20px;
+            text-transform: uppercase;
+        }
+        .name {
+            color: #e74c3c;
+            font-weight: bold;
+        }
+        .profile-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
             object-fit: cover;
             border: 5px solid #fff;
             box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
-            margin-top: 20px;
+            margin: 20px 0;
+        }
+        .services-box {
+            text-align: left;
+            background: #f8f9fa;
+            padding: 20px;
+            border-left: 5px solid #007bff;
+            margin: 25px 0;
+            border-radius: 4px;
+        }
+        .services-box p {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #333;
+            margin: 8px 0;
+        }
+        .info-notice {
+            background: #fff3cd;
+            border: 1px solid #ffeeba;
+            color: #856404;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: left;
+            margin-bottom: 15px;
+            font-size: 15px;
+            line-height: 1.6;
+            font-weight: bold;
+        }
+        .form-box {
+            background: #fff;
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 25px 0;
+            text-align: left;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #333;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        .submit-btn {
+            width: 100%;
+            padding: 12px;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .submit-btn:hover {
+            background: #0056b3;
+        }
+        .phone {
+            font-size: 20px;
+            font-weight: bold;
+            color: #2c3e50;
+            margin: 20px 0;
+        }
+        .btn-container {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            align-items: center;
+            margin-top: 15px;
+        }
+        .btn {
+            display: inline-block;
+            width: 80%;
+            max-width: 300px;
+            padding: 14px 20px;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 16px;
+            box-shadow: 0px 4px 6px rgba(0,0,0,0.1);
+            transition: 0.3s;
+            text-align: center;
+        }
+        .btn-group {
+            background: #25D366;
+        }
+        .btn-group:hover {
+            background: #128C7E;
+            transform: translateY(-2px);
+        }
+        .btn-channel {
+            background: #007bff;
+        }
+        .btn-channel:hover {
+            background: #0056b3;
+            transform: translateY(-2px);
         }
     </style>
 </head>
 <body>
 
-    <h1>बधाई हो! यह वेबसाइट <span class="name">Ashish Chauhan</span> ने बनाई है! 🚀</h1>
+    <div class="container">
+        <!-- Website Header -->
+        <h1>बधाई हो! यह वेबसाइट <span class="name">Ashish Chauhan</span> ने बनाई है! 🚀</h1>
+        
+        <!-- Profile Photo -->
+        <img src="myphoto.jpg" alt="Ashish Chauhan" class="profile-img">
+        
+        <!-- Shop Title -->
+        <h2>Jan Suvidha Kendra</h2>
+        
+        <!-- Services List -->
+        <div class="services-box">
+            <p>✅ यहाँ PF निकालना, एडवांस, KYC और पेंशन का काम होता है।</p>
+            <p>✅ सभी प्रकार के सरकारी व नौकरी के ऑनलाइन फॉर्म भरे जाते हैं।</p>
+            <p>✅ पैन कार्ड, आधार डाउनलोड, फोटोकॉपी और लैमिनेशन की सुविधा उपलब्ध है।</p>
+        </div>
+
+        <!-- Customer Form Container -->
+        <div class="form-box">
+            
+            <!-- Notice Box -->
+            <div class="info-notice">
+                📢 हमारे यहाँ निःशुल्क और सही जानकारी दी जाती है। आप निसंकोच Call या SMS कर सकते हैं, 24/7 घंटे उपलब्ध (Available) हैं। कृपया Group और Channel को ज़रूर Join करें।
+            </div>
+
+            <!-- JavaScript-Powered Form -->
+            <form onsubmit="sendToWhatsApp(event)">
+                <div class="form-group">
+                    <label for="customerName">🧑‍💻 कस्टमर अपना naam यहाँ लिखें:</label>
+                    <input type="text" id="customerName" placeholder="अपना पूरा नाम दर्ज करें" required>
+                </div>
+                <button type="submit" class="submit-btn">सबमिट करें</button>
+            </form>
+        </div>
+
+        <!-- Contact Info -->
+        <p class="phone">📞 संपर्क नंबर: +91 9675346756</p>
+        
+        <!-- Action Buttons -->
+        <div class="btn-container">
+            <a href="https://whatsapp.com" target="_blank" class="btn btn-group">
+                🟢 WhatsApp ग्रुप में जुड़ें
+            </a>
+            <a href="https://whatsapp.com" target="_blank" class="btn btn-channel">
+                📢 WhatsApp चैनल से जुड़ें
+            </a>
+        </div>
+    </div>
+
+    <!-- JavaScript to Handle WhatsApp Redirect -->
+    <script>
+        function sendToWhatsApp(event) {
+            event.preventDefault(); // Form ko reload hone se rokne ke liye
+            
+            var name = document.getElementById("customerName").value;
+            var phoneNumber = "919675346756"; // Aapka WhatsApp number desh ke code ke sath
+            
+            // Custom Message Template
+            var message = "नमस्ते आशीष जी, मेरा नाम " + encodeURIComponent(name) + " है। मुझे जन सुविधा केंद्र के काम के लिए संपर्क करना है।";
+            
+            // WhatsApp Link Format
+            var whatsappURL = "https://whatsapp.com" + phoneNumber + "&text=" + message;
+            
+            // Open WhatsApp in a new tab
+            window.open(whatsappURL, '_blank');
+        }
+    </script>
+
 </body>
-</html  <title>Jan Suvidha Kendra</title>
-
-    
-    
-     											           <!-- यहाँ आपकी फोटो दिखेगी -->
-   								 <img src="myphoto.jpg" alt="Ashish Chauhan" class="profile-img">
-
-</body>
-</html  <title>Jan Suvidha Kendra</title>
-    <style>
-        body { font-family: Arial, sans-serif; margin: 80px; }
-        .form-group { margin-bottom: 25px; }
-        label { display: block; margin-bottom: 8px; font-weight: bold; }
-        input { width: 300px; padding: 8px; }
-        button { padding: 10px 15px; background: #007bff; color: white; border: none; cursor: pointer; }
-    </style>
-</head>
-<body>
-
-    <meta charset="UTF-8">
-    <title>Shop Name Only</title>
-    <style>
-        body { font-family: Arial, sans-serif; margin: 50px; }
-        .form-group { margin-bottom: 15px; }
-        label { display: block; margin-bottom: 5px; font-weight: bold; }
-        input { width: 300px; padding: 8px; }
-        button { padding: 10px 15px; background: #007bff; color: white; border: none; cursor: pointer; }
-    </style>
-
-    <title>Shop Name Only</title>
-    <style>
-        body { font-family: Arial, sans-serif; margin: 50px; }
-        .form-group { margin-bottom: 15px; }
-        label { display: block; margin-bottom: 5px; font-weight: bold; }
-        input { width: 300px; padding: 8px; }
-        button { padding: 10px 15px; background: #007bff; color: white; border: none; cursor: pointer; }
-    </style>
-</head>
-<body>
-
-    <h2>यहाँ PF निकालना, एडवांस, KYC और पेंशन का काम होता है।सभी प्रकार के सरकारी व नौकरी के ऑनलाइन फॉर्म भरे जाते हैं।पैन कार्ड, आधार डाउनलोड, फोटोकॉपी और लैमिनेशन की सुविधा . Likhein</h2>
-<body>";
-
-    // Yeh line user ko direct WhatsApp group par bhej degi
-    res.redirect(https://whatsapp.com/channel/0029Vb8nJBP9cDDaQ6J3bz3c);
-echo "# Jan-Suvidha-Kendra" >> README.md
-git init
-git add README.md
-git commit -m "first commit"
-git branch -M main
-git remote add origin https://github.com/ashishchauhan01061999-sketch/Jan-Suvidha-Kendra.git
-git push -u origin main
-
-git remote add origin https://github.com/ashishchauhan01061999-sketch/Jan-Suvidha-Kendra.git
-git branch -M main
-git push -u origin main
-
-
-    
+</html>
