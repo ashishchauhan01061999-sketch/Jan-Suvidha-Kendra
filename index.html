@@ -89,7 +89,7 @@
             font-weight: bold;
             color: #333;
         }
-        input[type="text"] {
+        input[type="text"], input[type="tel"] {
             width: 100%;
             padding: 12px;
             font-size: 16px;
@@ -98,7 +98,7 @@
             box-sizing: border-box;
             outline: none;
         }
-        input[type="text"]:focus {
+        input[type="text"]:focus, input[type="tel"]:focus {
             border-color: #007bff;
         }
         .submit-btn {
@@ -206,23 +206,24 @@
         }
         .btn {
             display: inline-block;
-            width: 80%;
-            max-width: 300px;
+            width: 95%;
+            max-width: 450px;
             padding: 14px 20px;
             color: white;
             text-decoration: none;
             border-radius: 5px;
             font-weight: bold;
-            font-size: 16px;
+            font-size: 15px;
             box-shadow: 0px 4px 6px rgba(0,0,0,0.1);
             transition: 0.3s;
             text-align: center;
+            margin-bottom: 5px;
         }
-        .btn-group {
-            background: #25D366;
+        .btn-csc {
+            background: #ff9900;
         }
-        .btn-group:hover {
-            background: #128C7E;
+        .btn-csc:hover {
+            background: #e68a00;
             transform: translateY(-2px);
         }
         .btn-channel {
@@ -257,7 +258,7 @@
         <div class="form-box">
             <!-- Notice Box -->
             <div class="info-notice">
-                📢 हमारे यहाँ निःशुल्क और सही जानकारी दी जाती है। आप निसंकोच Call या SMS कर सकते हैं, 24/7 घंटे उपलब्ध (Available) हैं। कृपया Group और Channel को ज़रूर Join करें।
+                📢 हमारे यहाँ निःशुल्क और सही जानकारी दी जाती है। आप निसंकोच Call या SMS कर सकते हैं, 24/7 घंटे उपलब्ध (Available) हैं। कृपया Channel को ज़रूर Join करें।
             </div>
 
             <!-- JavaScript-Powered Form -->
@@ -266,11 +267,16 @@
                     <label for="customerName">🧑‍💻 कस्टमर अपना नाम यहाँ लिखें:</label>
                     <input type="text" id="customerName" placeholder="अपना पूरा नाम दर्ज करें" required>
                 </div>
+                <!-- नया फ़ोन नंबर इनपुट फ़ील्ड (Added) -->
+                <div class="form-group">
+                    <label for="customerPhone">📞 कस्टमर अपना मोबाइल नंबर यहाँ लिखें:</label>
+                    <input type="tel" id="customerPhone" placeholder="10 अंकों का मोबाइल नंबर दर्ज करें" pattern="[0-9]{10}" title="कृपया सही 10 अंकों का नंबर डालें" required>
+                </div>
                 <button type="submit" class="submit-btn">📲 WhatsApp पर भेजें</button>
             </form>
         </div>
 
-        <!-- Important Links Section (Serial Wise Set) -->
+        <!-- Important Links Section -->
         <section id="important-links" class="links-section">
             <h2 class="section-title">महत्वपूर्ण डाउनलोड और पोर्टल लिंक्स (Quick Links)</h2>
             <p>नीचे दी गई तालिका से आप सीधे आधिकारिक सरकारी वेबसाइटों पर जाकर अपनी सेवाएं एक्सेस कर सकते हैं:</p>
@@ -298,10 +304,3 @@
                             <td>NSDL</td>
                             <td><a href="https://tin-nsdl.com" target="_blank" class="table-btn">क्लिक करें</a></td>
                         </tr>
-                        <tr>
-                            <td><strong>3</strong></td>
-                            <td><i class="fa-solid fa-credit-card"></i> <strong>पैन कार्ड डाउनलोड (UTI)</strong></td>
-                            <td>UTIITS</td>
-                            <td><a href="https://utiitsl.com" target="_blank" class="table-btn">क्लिक करें</a></td>
-                        </tr>
-                        <tr>
