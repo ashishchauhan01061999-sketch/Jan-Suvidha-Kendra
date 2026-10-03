@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jan Suvidha Kendra - Ashish Chauhan</title>
+    <!-- FontAwesome CSS Icons के लिए -->
+    <link rel="stylesheet" href="https://cloudflare.com">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -13,7 +15,7 @@
             padding: 20px;
         }
         .container {
-            max-width: 600px;
+            max-width: 650px;
             background: white;
             margin: 40px auto;
             padding: 30px;
@@ -22,25 +24,26 @@
         }
         h1 {
             color: #2c3e50;
-            font-size: 26px;
+            font-size: 24px;
             line-height: 1.4;
         }
         h2 {
             color: #007bff;
-            font-size: 24px;
+            font-size: 26px;
             margin-top: 20px;
             text-transform: uppercase;
+            letter-spacing: 1px;
         }
         .name {
             color: #e74c3c;
             font-weight: bold;
         }
         .profile-img {
-            width: 180px;
-            height: 180px;
+            width: 160px;
+            height: 160px;
             border-radius: 50%;
             object-fit: cover;
-            border: 5px solid #fff;
+            border: 4px solid #007bff;
             box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
             margin: 20px 0;
         }
@@ -65,10 +68,9 @@
             padding: 15px;
             border-radius: 8px;
             text-align: left;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
             font-size: 15px;
             line-height: 1.6;
-            font-weight: bold;
         }
         .form-box {
             background: #fff;
@@ -89,16 +91,20 @@
         }
         input[type="text"] {
             width: 100%;
-            padding: 10px;
+            padding: 12px;
             font-size: 16px;
             border: 1px solid #ccc;
             border-radius: 4px;
             box-sizing: border-box;
+            outline: none;
+        }
+        input[type="text"]:focus {
+            border-color: #007bff;
         }
         .submit-btn {
             width: 100%;
             padding: 12px;
-            background: #007bff;
+            background: #25D366;
             color: white;
             border: none;
             border-radius: 4px;
@@ -108,13 +114,88 @@
             transition: 0.3s;
         }
         .submit-btn:hover {
-            background: #0056b3;
+            background: #128C7E;
         }
+        
+        /* --- तालिका स्टाइल्स --- */
+        .links-section {
+            margin-top: 35px;
+            text-align: left;
+        }
+        .section-title {
+            font-size: 20px;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            text-transform: none;
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 8px;
+        }
+        .links-section p {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 15px;
+        }
+        .links-table-container {
+            width: 100%;
+            overflow-x: auto;
+            border-radius: 8px;
+            box-shadow: 0px 2px 8px rgba(0,0,0,0.05);
+        }
+        .links-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: #fff;
+            font-size: 14px;
+        }
+        .links-table th {
+            background: #007bff;
+            color: white;
+            padding: 12px 10px;
+            font-weight: bold;
+            text-align: left;
+        }
+        .links-table td {
+            padding: 12px 10px;
+            border-bottom: 1px solid #eee;
+            color: #333;
+            vertical-align: middle;
+        }
+        .links-table tr:hover {
+            background: #f9f9f9;
+        }
+        .links-table i {
+            color: #007bff;
+            margin-right: 6px;
+            width: 18px;
+            text-align: center;
+        }
+        .table-btn {
+            display: inline-block;
+            padding: 6px 12px;
+            background: #007bff;
+            color: white !important;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: bold;
+            transition: 0.2s;
+            text-align: center;
+        }
+        .table-btn:hover {
+            background: #0056b3;
+            box-shadow: 0px 2px 5px rgba(0,0,0,0.15);
+        }
+        /* --- तालिका एंड --- */
+
         .phone {
             font-size: 20px;
             font-weight: bold;
             color: #2c3e50;
-            margin: 20px 0;
+            margin: 25px 0 15px 0;
+        }
+        .phone a {
+            color: #2c3e50;
+            text-decoration: none;
         }
         .btn-container {
             display: flex;
@@ -174,7 +255,6 @@
 
         <!-- Customer Form Container -->
         <div class="form-box">
-            
             <!-- Notice Box -->
             <div class="info-notice">
                 📢 हमारे यहाँ निःशुल्क और सही जानकारी दी जाती है। आप निसंकोच Call या SMS कर सकते हैं, 24/7 घंटे उपलब्ध (Available) हैं। कृपया Group और Channel को ज़रूर Join करें।
@@ -183,45 +263,45 @@
             <!-- JavaScript-Powered Form -->
             <form onsubmit="sendToWhatsApp(event)">
                 <div class="form-group">
-                    <label for="customerName">🧑‍💻 कस्टमर अपना naam यहाँ लिखें:</label>
+                    <label for="customerName">🧑‍💻 कस्टमर अपना नाम यहाँ लिखें:</label>
                     <input type="text" id="customerName" placeholder="अपना पूरा नाम दर्ज करें" required>
                 </div>
-                <button type="submit" class="submit-btn">सबमिट करें</button>
+                <button type="submit" class="submit-btn">📲 WhatsApp पर भेजें</button>
             </form>
         </div>
 
-        <!-- Contact Info -->
-        <p class="phone">📞 संपर्क नंबर: +91 9675346756</p>
-        
-        <!-- Action Buttons -->
-        <div class="btn-container">
-            <a href="https://whatsapp.com" target="_blank" class="btn btn-group">
-                🟢 WhatsApp ग्रुप में जुड़ें
-            </a>
-            <a href="https://whatsapp.com" target="_blank" class="btn btn-channel">
-                📢 WhatsApp चैनल से जुड़ें
-            </a>
-        </div>
-    </div>
-
-    <!-- JavaScript to Handle WhatsApp Redirect -->
-    <script>
-        function sendToWhatsApp(event) {
-            event.preventDefault(); // Form ko reload hone se rokne ke liye
+        <!-- Important Links Section (Serial Wise Set) -->
+        <section id="important-links" class="links-section">
+            <h2 class="section-title">महत्वपूर्ण डाउनलोड और पोर्टल लिंक्स (Quick Links)</h2>
+            <p>नीचे दी गई तालिका से आप सीधे आधिकारिक सरकारी वेबसाइटों पर जाकर अपनी सेवाएं एक्सेस कर सकते हैं:</p>
             
-            var name = document.getElementById("customerName").value;
-            var phoneNumber = "919675346756"; // Aapka WhatsApp number desh ke code ke sath
-            
-            // Custom Message Template
-            var message = "नमस्ते आशीष जी, मेरा नाम " + encodeURIComponent(name) + " है। मुझे जन सुविधा केंद्र के काम के लिए संपर्क करना है।";
-            
-            // WhatsApp Link Format
-            var whatsappURL = "https://whatsapp.com" + phoneNumber + "&text=" + message;
-            
-            // Open WhatsApp in a new tab
-            window.open(whatsappURL, '_blank');
-        }
-    </script>
-
-</body>
-</html>
+            <div class="links-table-container">
+                <table class="links-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 12%;">क्र.सं.</th>
+                            <th style="width: 48%;">सेवा का नाम (Service Name)</th>
+                            <th style="width: 20%;">विभाग</th>
+                            <th style="width: 20%;">एक्शन</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>1</strong></td>
+                            <td><i class="fa-solid fa-address-card"></i> <strong>आधार कार्ड डाउनलोड</strong></td>
+                            <td>UIDAI</td>
+                            <td><a href="https://uidai.gov.in" target="_blank" class="table-btn">क्लिक करें</a></td>
+                        </tr>
+                        <tr>
+                            <td><strong>2</strong></td>
+                            <td><i class="fa-solid fa-credit-card"></i> <strong>पैन कार्ड डाउनलोड (NSDL)</strong></td>
+                            <td>NSDL</td>
+                            <td><a href="https://tin-nsdl.com" target="_blank" class="table-btn">क्लिक करें</a></td>
+                        </tr>
+                        <tr>
+                            <td><strong>3</strong></td>
+                            <td><i class="fa-solid fa-credit-card"></i> <strong>पैन कार्ड डाउनलोड (UTI)</strong></td>
+                            <td>UTIITS</td>
+                            <td><a href="https://utiitsl.com" target="_blank" class="table-btn">क्लिक करें</a></td>
+                        </tr>
+                        <tr>
