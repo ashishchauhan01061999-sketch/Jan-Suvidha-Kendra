@@ -118,76 +118,6 @@
             background: #128C7E;
         }
         
-        /* --- तालिका स्टाइल्स --- */
-        .links-section {
-            margin-top: 35px;
-            text-align: left;
-        }
-        .section-title {
-            font-size: 20px;
-            color: #2c3e50;
-            margin-bottom: 10px;
-            text-transform: none;
-            border-bottom: 2px solid #007bff;
-            padding-bottom: 8px;
-        }
-        .links-section p {
-            font-size: 14px;
-            color: #666;
-            margin-bottom: 15px;
-        }
-        .links-table-container {
-            width: 100%;
-            overflow-x: auto;
-            border-radius: 8px;
-            box-shadow: 0px 2px 8px rgba(0,0,0,0.05);
-        }
-        .links-table {
-            width: 100%;
-            border-collapse: collapse;
-            background: #fff;
-            font-size: 14px;
-        }
-        .links-table th {
-            background: #007bff;
-            color: white;
-            padding: 12px 10px;
-            font-weight: bold;
-            text-align: left;
-        }
-        .links-table td {
-            padding: 12px 10px;
-            border-bottom: 1px solid #eee;
-            color: #333;
-            vertical-align: middle;
-        }
-        .links-table tr:hover {
-            background: #f9f9f9;
-        }
-        .links-table i {
-            color: #007bff;
-            margin-right: 6px;
-            width: 18px;
-            text-align: center;
-        }
-        .table-btn {
-            display: inline-block;
-            padding: 6px 12px;
-            background: #007bff;
-            color: white !important;
-            text-decoration: none;
-            border-radius: 4px;
-            font-size: 12px;
-            font-weight: bold;
-            transition: 0.2s;
-            text-align: center;
-        }
-        .table-btn:hover {
-            background: #0056b3;
-            box-shadow: 0px 2px 5px rgba(0,0,0,0.15);
-        }
-        /* --- तालिका एंड --- */
-
         .phone {
             font-size: 20px;
             font-weight: bold;
@@ -286,21 +216,35 @@
             </form>
         </div>
 
-        <!-- Important Links Section -->
-        <section id="important-links" class="links-section">
-            <h2 class="section-title">महत्वपूर्ण डाउनलोड और पोर्टल लिंक्स (Quick Links)</h2>
-            <p>नीचे दी गई तालिका से आप सीधे आधिकारिक सरकारी वेबसाइटों पर जाकर अपनी सेवाएं एक्सेस कर सकते हैं:</p>
-            
-            <div class="links-table-container">
-                <table class="links-table">
-                    <thead>
-                        <tr>
-                            <th style="width: 12%;">क्र.सं.</th>
-                            <th style="width: 48%;">सेवा का नाम (Service Name)</th>
-                            <th style="width: 20%;">विभाग</th>
-                            <th style="width: 20%;">एक्शन</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>1</strong></td>
+        <!-- महत्वपूर्ण सरकारी लिंक्स सेक्शन (नया ग्रिड आधारित डिज़ाइन) -->
+        <section id="govt-links" style="margin-top: 35px; text-align: left;">
+            <h2 style="font-size: 20px; color: #2c3e50; margin-bottom: 10px; border-bottom: 2px solid #007bff; padding-bottom: 8px;">
+                📢 महत्वपूर्ण डाउनलोड और सरकारी पोर्टल लिंक्स
+            </h2>
+            <p style="font-size: 14px; color: #666; margin-bottom: 20px;">
+                नीचे दिए गए बटनों पर क्लिक करके आप सीधे आधिकारिक सरकारी वेबसाइटों पर जा सकते हैं:
+            </p>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px; width: 100%; box-sizing: border-box;">
+                
+                <!-- 1. आधार कार्ड -->
+                <div style="background: #fff; padding: 15px; border-radius: 8px; border: 1px solid #ddd; border-left: 5px solid #007bff; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
+                    <div>
+                        <span style="font-weight: bold; color: #333; display: block; font-size: 15px;"><i class="fa-solid fa-address-card" style="color: #007bff; margin-right: 8px;"></i> 1. आधार कार्ड डाउनलोड</span>
+                        <small style="color: #666; font-size: 12px;">विभाग: UIDAI Portal</small>
+                    </div>
+                    <a href="https://uidai.gov.in" target="_blank" style="background: #007bff; color: white; text-decoration: none; padding: 8px 14px; font-size: 13px; font-weight: bold; border-radius: 4px;">क्लिक करें</a>
+                </div>
+
+                <!-- 2. पैन कार्ड NSDL -->
+                <div style="background: #fff; padding: 15px; border-radius: 8px; border: 1px solid #ddd; border-left: 5px solid #007bff; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
+                    <div>
+                        <span style="font-weight: bold; color: #333; display: block; font-size: 15px;"><i class="fa-solid fa-credit-card" style="color: #007bff; margin-right: 8px;"></i> 2. पैन कार्ड डाउनलोड (NSDL)</span>
+                        <small style="color: #666; font-size: 12px;">विभाग: NSDL Portal</small>
+                    </div>
+                    <a href="https://tin-nsdl.com" target="_blank" style="background: #007bff; color: white; text-decoration: none; padding: 8px 14px; font-size: 13px; font-weight: bold; border-radius: 4px;">क्लिक करें</a>
+                </div>
+
+                <!-- 3. पैन कार्ड UTI -->
+                <div style="background: #fff; padding: 15px; border-radius: 8px; border: 1px solid #ddd; border-left: 5px solid #007bff; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
+                    <div>
