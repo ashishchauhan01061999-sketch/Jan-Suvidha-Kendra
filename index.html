@@ -89,7 +89,7 @@
             font-weight: bold;
             color: #333;
         }
-        input[type="text"], input[type="tel"] {
+        input[type="text"], input[type="tel"], select {
             width: 100%;
             padding: 12px;
             font-size: 16px;
@@ -97,8 +97,9 @@
             border-radius: 4px;
             box-sizing: border-box;
             outline: none;
+            background-color: #fff;
         }
-        input[type="text"]:focus, input[type="tel"]:focus {
+        input[type="text"]:focus, input[type="tel"]:focus, select:focus {
             border-color: #007bff;
         }
         .submit-btn {
@@ -202,7 +203,7 @@
             flex-direction: column;
             gap: 12px;
             align-items: center;
-            margin-top: 15px;
+            margin-top: 20px;
         }
         .btn {
             display: inline-block;
@@ -258,7 +259,7 @@
         <div class="form-box">
             <!-- Notice Box -->
             <div class="info-notice">
-                📢 हमारे यहाँ निःशुल्क और सही जानकारी दी जाती है। आप निसंकोच Call या SMS कर सकते हैं, 24/7 घंटे उपलब्ध (Available) हैं। कृपया Channel को ज़रूर Join करें।
+                📢 हमारे यहाँ निःशुल्क और सही जानकारी दी जाती. आप निसंकोच Call या SMS कर सकते हैं, 24/7 घंटे उपलब्ध (Available) हैं। कृपया Channel को ज़रूर Join करें।
             </div>
 
             <!-- JavaScript-Powered Form -->
@@ -267,11 +268,21 @@
                     <label for="customerName">🧑‍💻 कस्टमर अपना नाम यहाँ लिखें:</label>
                     <input type="text" id="customerName" placeholder="अपना पूरा नाम दर्ज करें" required>
                 </div>
-                <!-- नया फ़ोन नंबर इनपुट फ़ील्ड (Added) -->
+                
                 <div class="form-group">
                     <label for="customerPhone">📞 कस्टमर अपना मोबाइल नंबर यहाँ लिखें:</label>
                     <input type="tel" id="customerPhone" placeholder="10 अंकों का मोबाइल नंबर दर्ज करें" pattern="[0-9]{10}" title="कृपया सही 10 अंकों का नंबर डालें" required>
                 </div>
+
+                <div class="form-group">
+                    <label for="serviceType">📂 आपको क्या सुविधा चाहिए? (चुनें):</label>
+                    <select id="serviceType" required>
+                        <option value="" disabled selected>-- कृपया एक विकल्प चुनें --</option>
+                        <option value="दस्तावेज़/पात्रता चेक करना (Check Roots/Documents)">📄 दस्तावेज़ / पात्रता चेक करना (Check Roots/Documents)</option>
+                        <option value="नया फॉर्म/काम करवाना (New Online Work)">💻 नया फॉर्म / ऑनलाइन काम करवाना (New Work)</option>
+                    </select>
+                </div>
+
                 <button type="submit" class="submit-btn">📲 WhatsApp पर भेजें</button>
             </form>
         </div>
@@ -294,13 +305,3 @@
                     <tbody>
                         <tr>
                             <td><strong>1</strong></td>
-                            <td><i class="fa-solid fa-address-card"></i> <strong>आधार कार्ड डाउनलोड</strong></td>
-                            <td>UIDAI</td>
-                            <td><a href="https://uidai.gov.in" target="_blank" class="table-btn">क्लिक करें</a></td>
-                        </tr>
-                        <tr>
-                            <td><strong>2</strong></td>
-                            <td><i class="fa-solid fa-credit-card"></i> <strong>पैन कार्ड डाउनलोड (NSDL)</strong></td>
-                            <td>NSDL</td>
-                            <td><a href="https://tin-nsdl.com" target="_blank" class="table-btn">क्लिक करें</a></td>
-                        </tr>
