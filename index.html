@@ -14,7 +14,7 @@
         input, select, textarea { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px; box-sizing: border-box; font-family: Arial, sans-serif; }
         .btn-wp { background-color: #25D366; color: white; padding: 12px; border: none; width: 100%; font-size: 16px; font-weight: bold; border-radius: 5px; cursor: pointer; margin-top: 10px; }
         .btn-channel { display: block; background-color: #128C7E; color: white; padding: 12px; font-size: 15px; font-weight: bold; border-radius: 5px; text-decoration: none; margin: 10px 0; text-align: center; box-shadow: 0 2px 4px rgba(0,0,0,0.2); }
-        .btn-channel-two { display: block; background-color: #075E54; color: white; padding: 12px; font-size: 15px; font-weight: bold; border-radius: 5px; text-decoration: none; margin: 10px 0; text-align: center; box-shadow: 0 2px 4px rgba(0,0,0,0.2); }
+        .btn-channel-two { display: block; background-color: #007bff; color: white; padding: 12px; font-size: 15px; font-weight: bold; border-radius: 5px; text-decoration: none; margin: 10px 0; text-align: center; box-shadow: 0 2px 4px rgba(0,0,0,0.2); }
         .links-section { margin-top: 30px; padding-top: 20px; border-top: 2px dashed #ccc; text-align: left; }
         .gov-link { display: block; background: #007bff; color: white; text-align: center; padding: 10px; margin: 10px 0; text-decoration: none; border-radius: 5px; font-weight: bold; }
         
@@ -37,9 +37,11 @@
     
     <p style="color: #d9534f; font-weight: bold;">📢 हमारे यहाँ निःशुल्क और सही जानकारी दी जाती है। आप निसंकोच Call या SMS कर सकते हैं, 24/7 घंटे उपलब्ध हैं। कृपया Channel को ज़रूर Join करें।</p>
 
-    <!-- व्हाट्सएप चैनल बटन्स -->
+    <!-- पहला व्हाट्सएप चैनल बटन -->
     <a href="https://whatsapp.com" target="_blank" class="btn-channel">📢 Join Channel 1: Chauhan Investment Trading Company</a>
-    <a href="https://whatsapp.com" target="_blank" class="btn-channel-two">📢 Join Our Second WhatsApp Channel</a>
+
+    <!-- दूसरा व्हाट्सएप चैनल बटन (नया नाम अपडेटेड) -->
+    <a href="https://whatsapp.com/channel/0029Vb8nJBP9cDDaQ6J3bz3c" target="_blank" class="btn-channel-two">🏢 Join Channel 2: Chauhan C.S.C. CENTRE JHAJJAR HARYANA</a>
 
     <!-- कस्टमर फॉर्म -->
     <form id="suvidhaForm">
@@ -57,12 +59,9 @@
             <label>📂 आपको क्या सुविधा चाहिए? (चुनें):</label>
             <select id="serviceRequired" onchange="checkServiceLink(this.value)" required>
                 <option value="">-- कृपया एक विकल्प चुनें --</option>
-                <!-- नया कस्टमाइज्ड ऑप्शन -->
                 <option value="Buy/Sell & Connect Advice">🛒 Buy/Sell & Connect Advice (प्लॉट, कंप्यूटर आदि खरीदें/बेचें व सलाह लें)</option>
-                <!-- ट्रेडिंग और इन्वेस्टमेंट ऑप्शंस -->
                 <option value="Trading Advice">📈 Trading Advice (ट्रेडिंग सलाह)</option>
                 <option value="Investing Advice">💰 Investing Advice (इन्वेस्टमेंट सलाह)</option>
-                <!-- पुरानी सर्विसेज -->
                 <option value="PF & Pension">PF निकालना, एडवांस, KYC और पेंशन</option>
                 <option value="Govt Form">सरकारी व नौकरी के ऑनलाइन फॉर्म</option>
                 <option value="Pan & Aadhaar">पैन कार्ड, आधार डाउनलोड और फोटोकॉपी</option>
@@ -110,7 +109,6 @@ function checkServiceLink(val) {
     var btn = document.getElementById('dynamicLinkBtn');
     var itemBox = document.getElementById('itemDetailBox');
     
-    // नया इनपुट बॉक्स दिखाने के लिए कंडीशन
     if(val === "Buy/Sell & Connect Advice") {
         itemBox.style.display = "block";
     } else {
@@ -118,7 +116,6 @@ function checkServiceLink(val) {
         document.getElementById('itemDetails').value = "";
     }
     
-    // ट्रेडिंग और इन्वेस्टमेंट लिंक्स की जांच
     if(val === "Trading Advice") {
         box.style.display = "block";
         text.innerText = "📢 ट्रेडिंग सलाह (Trading Advice) के लिए हमारे इस चैनल को जॉइन करें:";
@@ -126,8 +123,8 @@ function checkServiceLink(val) {
     } 
     else if(val === "Investing Advice") {
         box.style.display = "block";
-        text.innerText = "📢 इन्वेस्टमेंट सलाह (Investing Advice) के लिए हमारे इस दूसरे चैनल को जॉइन करें:";
-        btn.href = "https://whatsapp.com";
+        text.innerText = "📢 चौहान सी.एस.सी. सेंटर (Chauhan C.S.C. CENTRE) चैनल को जॉइन करें:";
+        btn.href = "https://whatsapp.com/channel/0029Vb8nJBP9cDDaQ6J3bz3c";
     } 
     else {
         box.style.display = "none";
@@ -152,7 +149,6 @@ function sendToWhatsApp() {
                "*मोबाइल नंबर:* " + phone + "%0A" +
                "*चुनी गई सुविधा:* " + service;
     
-    // अगर सामान/प्लॉट की जानकारी लिखी गई है तो व्हाट्सएप मैसेज में जोड़ें
     if(service === "Buy/Sell & Connect Advice" && itemInfo !== "") {
         text += "%0A*सामान/प्रॉपर्टी की डिटेल्स व सलाह:* " + encodeURIComponent(itemInfo);
     }
