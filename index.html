@@ -11,10 +11,16 @@
         .badge { background: #28a745; color: white; padding: 5px 10px; border-radius: 5px; font-weight: bold; display: inline-block; margin: 5px; }
         .form-group { margin: 15px 0; text-align: left; }
         label { font-weight: bold; display: block; margin-bottom: 5px; }
-        input, select { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px; box-sizing: border-box; }
+        input, select, textarea { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px; box-sizing: border-box; font-family: Arial, sans-serif; }
         .btn-wp { background-color: #25D366; color: white; padding: 12px; border: none; width: 100%; font-size: 16px; font-weight: bold; border-radius: 5px; cursor: pointer; margin-top: 10px; }
+        .btn-channel { display: block; background-color: #128C7E; color: white; padding: 12px; font-size: 15px; font-weight: bold; border-radius: 5px; text-decoration: none; margin: 10px 0; text-align: center; box-shadow: 0 2px 4px rgba(0,0,0,0.2); }
+        .btn-channel-two { display: block; background-color: #075E54; color: white; padding: 12px; font-size: 15px; font-weight: bold; border-radius: 5px; text-decoration: none; margin: 10px 0; text-align: center; box-shadow: 0 2px 4px rgba(0,0,0,0.2); }
         .links-section { margin-top: 30px; padding-top: 20px; border-top: 2px dashed #ccc; text-align: left; }
         .gov-link { display: block; background: #007bff; color: white; text-align: center; padding: 10px; margin: 10px 0; text-decoration: none; border-radius: 5px; font-weight: bold; }
+        
+        /* डायनेमिक बॉक्स का स्टाइल */
+        .dynamic-link-box { display: none; background: #fff3cd; border: 1px solid #ffeeba; padding: 15px; border-radius: 5px; margin: 15px 0; text-align: left; }
+        .btn-open-link { display: inline-block; background-color: #ffc107; color: #212529; padding: 8px 15px; text-decoration: none; font-weight: bold; border-radius: 4px; margin-top: 10px; }
     </style>
 </head>
 <body>
@@ -24,12 +30,16 @@
     <p>बधाई हो! यह वेबसाइट <strong>Ashish Chauhan</strong> ने बनाई है!</p>
     
     <div style="text-align: left; margin: 20px 0;">
-        <span class="badge">✅ PF निकालना, एडवांस, KYC और पेंशन</span>
+        <span class="badge">✅ PF निकालना, एडवांस, KYC & पेंशन</span>
         <span class="badge">✅ सभी प्रकार के सरकारी व नौकरी फॉर्म</span>
         <span class="badge">✅ पैन कार्ड, आधार डाउनलोड & लैमिनेशन</span>
     </div>
     
     <p style="color: #d9534f; font-weight: bold;">📢 हमारे यहाँ निःशुल्क और सही जानकारी दी जाती है। आप निसंकोच Call या SMS कर सकते हैं, 24/7 घंटे उपलब्ध हैं। कृपया Channel को ज़रूर Join करें।</p>
+
+    <!-- व्हाट्सएप चैनल बटन्स -->
+    <a href="https://whatsapp.com" target="_blank" class="btn-channel">📢 Join Channel 1: Chauhan Investment Trading Company</a>
+    <a href="https://whatsapp.com" target="_blank" class="btn-channel-two">📢 Join Our Second WhatsApp Channel</a>
 
     <!-- कस्टमर फॉर्म -->
     <form id="suvidhaForm">
@@ -45,20 +55,36 @@
 
         <div class="form-group">
             <label>📂 आपको क्या सुविधा चाहिए? (चुनें):</label>
-            <select id="serviceRequired" required>
+            <select id="serviceRequired" onchange="checkServiceLink(this.value)" required>
                 <option value="">-- कृपया एक विकल्प चुनें --</option>
-                <!-- आपकी पुरानी सर्विसेज़ -->
+                <!-- नया कस्टमाइज्ड ऑप्शन -->
+                <option value="Buy/Sell & Connect Advice">🛒 Buy/Sell & Connect Advice (प्लॉट, कंप्यूटर आदि खरीदें/बेचें व सलाह लें)</option>
+                <!-- ट्रेडिंग और इन्वेस्टमेंट ऑप्शंस -->
+                <option value="Trading Advice">📈 Trading Advice (ट्रेडिंग सलाह)</option>
+                <option value="Investing Advice">💰 Investing Advice (इन्वेस्टमेंट सलाह)</option>
+                <!-- पुरानी सर्विसेज -->
                 <option value="PF & Pension">PF निकालना, एडवांस, KYC और पेंशन</option>
                 <option value="Govt Form">सरकारी व नौकरी के ऑनलाइन फॉर्म</option>
                 <option value="Pan & Aadhaar">पैन कार्ड, आधार डाउनलोड और फोटोकॉपी</option>
-                <!-- नई जोड़ी गई ऑल-इन-वन सर्विसेज़ -->
                 <option value="Caste & Income Certificate">जाति, मूल निवास और आय प्रमाण पत्र</option>
                 <option value="Voter ID Card">नया वोटर आईडी कार्ड / सुधार</option>
                 <option value="Ayushman Health Card">आयुष्मान भारत (Health Card)</option>
                 <option value="Banking & Cash Withdrawal">पैसे निकालना (Aadhaar Pay) & खाता खोलना</option>
-                <option value="Electricity & Utility Bill">बिजली, पानी और गैस बिल भुगतान</option>
+                <option value="Electricity & Utility Bill">बिजली, पानी और गैस bill भुगतान</option>
                 <option value="Vehicle Insurance & Paper">गाड़ी का बीमा (Insurance) और टैक्स</option>
             </select>
+        </div>
+
+        <!-- यह बॉक्स तब दिखेगा जब ट्रेडिंग या इन्वेस्टमेंट चुना जाएगा -->
+        <div id="linkDisplayBox" class="dynamic-link-box">
+            <p id="linkText" style="margin: 0; font-weight: bold; color: #856404;"></p>
+            <a id="dynamicLinkBtn" href="#" target="_blank" class="btn-open-link">🔗 चैनल खोलें (Open Channel)</a>
+        </div>
+
+        <!-- प्लॉट/कंप्यूटर आदि की जानकारी लिखने के लिए इनपुट बॉक्स -->
+        <div id="itemDetailBox" class="form-group" style="display: none;">
+            <label style="color: #0056b3;">📝 जो सामान/प्रॉपर्टी (प्लॉट, कंप्यूटर आदि) खरीदना या बेचना है, उसकी जानकारी यहाँ लिखें:</label>
+            <textarea id="itemDetails" rows="4" placeholder="उदाहरण: मुझे एक कंप्यूटर बेचना है / मुझे प्लॉट खरीदने के लिए सलाह चाहिए..."></textarea>
         </div>
 
         <button type="button" class="btn-wp" onclick="sendToWhatsApp()">📲 WhatsApp पर भेजें</button>
@@ -78,23 +104,58 @@
 </div>
 
 <script>
+function checkServiceLink(val) {
+    var box = document.getElementById('linkDisplayBox');
+    var text = document.getElementById('linkText');
+    var btn = document.getElementById('dynamicLinkBtn');
+    var itemBox = document.getElementById('itemDetailBox');
+    
+    // नया इनपुट बॉक्स दिखाने के लिए कंडीशन
+    if(val === "Buy/Sell & Connect Advice") {
+        itemBox.style.display = "block";
+    } else {
+        itemBox.style.display = "none";
+        document.getElementById('itemDetails').value = "";
+    }
+    
+    // ट्रेडिंग और इन्वेस्टमेंट लिंक्स की जांच
+    if(val === "Trading Advice") {
+        box.style.display = "block";
+        text.innerText = "📢 ट्रेडिंग सलाह (Trading Advice) के लिए हमारे इस चैनल को जॉइन करें:";
+        btn.href = "https://whatsapp.com";
+    } 
+    else if(val === "Investing Advice") {
+        box.style.display = "block";
+        text.innerText = "📢 इन्वेस्टमेंट सलाह (Investing Advice) के लिए हमारे इस दूसरे चैनल को जॉइन करें:";
+        btn.href = "https://whatsapp.com";
+    } 
+    else {
+        box.style.display = "none";
+    }
+}
+
 function sendToWhatsApp() {
     var name = document.getElementById('customerName').value;
     var phone = document.getElementById('customerPhone').value;
     var service = document.getElementById('serviceRequired').value;
+    var itemInfo = document.getElementById('itemDetails').value;
     
     if(name == "" || phone == "" || service == "") {
         alert("कृपया सभी जानकारी सही-सही भरें!");
         return;
     }
     
-    // यहाँ आपका सेट किया हुआ व्हाट्सएप नंबर है
     var myWhatsAppNumber = "919675346756"; 
     
     var text = "*All In One Jan Suvidha Kendra*%0A%0A" +
                "*कस्टमर का नाम:* " + name + "%0A" +
                "*मोबाइल नंबर:* " + phone + "%0A" +
                "*चुनी गई सुविधा:* " + service;
+    
+    // अगर सामान/प्लॉट की जानकारी लिखी गई है तो व्हाट्सएप मैसेज में जोड़ें
+    if(service === "Buy/Sell & Connect Advice" && itemInfo !== "") {
+        text += "%0A*सामान/प्रॉपर्टी की डिटेल्स व सलाह:* " + encodeURIComponent(itemInfo);
+    }
                
     var wpUrl = "https://whatsapp.com" + myWhatsAppNumber + "&text=" + text;
     window.open(wpUrl, '_blank');
