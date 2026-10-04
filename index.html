@@ -40,8 +40,8 @@
     <!-- पहला व्हाट्सएप चैनल बटन -->
     <a href="https://whatsapp.com" target="_blank" class="btn-channel">📢 Join Channel 1: Chauhan Investment Trading Company</a>
 
-    <!-- दूसरा व्हाट्सएप चैनल बटन (नया नाम अपडेटेड) -->
-    <a href="https://whatsapp.com/channel/0029Vb8nJBP9cDDaQ6J3bz3c" target="_blank" class="btn-channel-two">🏢 Join Channel 2: Chauhan C.S.C. CENTRE JHAJJAR HARYANA</a>
+    <!-- दूसरा व्हाट्सएप चैनल बटन -->
+    <a href="https://whatsapp.com" target="_blank" class="btn-channel-two">🏢 Join Channel 2: Chauhan C.S.C. CENTRE JHAJJAR HARYANA</a>
 
     <!-- कस्टमर फॉर्म -->
     <form id="suvidhaForm">
@@ -59,6 +59,9 @@
             <label>📂 आपको क्या सुविधा चाहिए? (चुनें):</label>
             <select id="serviceRequired" onchange="checkServiceLink(this.value)" required>
                 <option value="">-- कृपया एक विकल्प चुनें --</option>
+                <!-- नया सजेशन और फीडबैक ऑप्शन -->
+                <option value="Suggestion & Feedback">📝 Suggestion & Feedback (सुझाव और फीडबैक दें)</option>
+                <!-- बाकी ऑप्शंस -->
                 <option value="Buy/Sell & Connect Advice">🛒 Buy/Sell & Connect Advice (प्लॉट, कंप्यूटर आदि खरीदें/बेचें व सलाह लें)</option>
                 <option value="Trading Advice">📈 Trading Advice (ट्रेडिंग सलाह)</option>
                 <option value="Investing Advice">💰 Investing Advice (इन्वेस्टमेंट सलाह)</option>
@@ -86,6 +89,12 @@
             <textarea id="itemDetails" rows="4" placeholder="उदाहरण: मुझे एक कंप्यूटर बेचना है / मुझे प्लॉट खरीदने के लिए सलाह चाहिए..."></textarea>
         </div>
 
+        <!-- फीडबैक और सुझाव लिखने के लिए इनपुट बॉक्स -->
+        <div id="feedbackDetailBox" class="form-group" style="display: none;">
+            <label style="color: #28a745;">📝 अपना सुझाव या फीडबैक यहाँ लिखें:</label>
+            <textarea id="feedbackDetails" rows="4" placeholder="हमारे केंद्र या वेबसाइट के लिए अपना बहुमूल्य सुझाव या विचार यहाँ साझा करें..."></textarea>
+        </div>
+
         <button type="button" class="btn-wp" onclick="sendToWhatsApp()">📲 WhatsApp पर भेजें</button>
     </form>
 
@@ -108,7 +117,9 @@ function checkServiceLink(val) {
     var text = document.getElementById('linkText');
     var btn = document.getElementById('dynamicLinkBtn');
     var itemBox = document.getElementById('itemDetailBox');
+    var feedbackBox = document.getElementById('feedbackDetailBox');
     
+    // बाय/सेल बॉक्स कंट्रोल
     if(val === "Buy/Sell & Connect Advice") {
         itemBox.style.display = "block";
     } else {
@@ -116,6 +127,15 @@ function checkServiceLink(val) {
         document.getElementById('itemDetails').value = "";
     }
     
+    // फीडबैक बॉक्स कंट्रोल
+    if(val === "Suggestion & Feedback") {
+        feedbackBox.style.display = "block";
+    } else {
+        feedbackBox.style.display = "none";
+        document.getElementById('feedbackDetails').value = "";
+    }
+    
+    // ट्रेडिंग/इन्वेस्टमेंट चैनल्स लिंक्स कंट्रोल
     if(val === "Trading Advice") {
         box.style.display = "block";
         text.innerText = "📢 ट्रेडिंग सलाह (Trading Advice) के लिए हमारे इस चैनल को जॉइन करें:";
@@ -124,7 +144,7 @@ function checkServiceLink(val) {
     else if(val === "Investing Advice") {
         box.style.display = "block";
         text.innerText = "📢 चौहान सी.एस.सी. सेंटर (Chauhan C.S.C. CENTRE) चैनल को जॉइन करें:";
-        btn.href = "https://whatsapp.com/channel/0029Vb8nJBP9cDDaQ6J3bz3c";
+        btn.href = "https://whatsapp.com";
     } 
     else {
         box.style.display = "none";
@@ -136,6 +156,7 @@ function sendToWhatsApp() {
     var phone = document.getElementById('customerPhone').value;
     var service = document.getElementById('serviceRequired').value;
     var itemInfo = document.getElementById('itemDetails').value;
+    var feedbackInfo = document.getElementById('feedbackDetails').value;
     
     if(name == "" || phone == "" || service == "") {
         alert("कृपया सभी जानकारी सही-सही भरें!");
@@ -149,14 +170,9 @@ function sendToWhatsApp() {
                "*मोबाइल नंबर:* " + phone + "%0A" +
                "*चुनी गई सुविधा:* " + service;
     
+    // अगर सामान/प्लॉट की जानकारी है
     if(service === "Buy/Sell & Connect Advice" && itemInfo !== "") {
         text += "%0A*सामान/प्रॉपर्टी की डिटेल्स व सलाह:* " + encodeURIComponent(itemInfo);
     }
-               
-    var wpUrl = "https://whatsapp.com" + myWhatsAppNumber + "&text=" + text;
-    window.open(wpUrl, '_blank');
-}
-</script>
-
-</body>
-</html>
+    
+    // अगर फीडबैक/सुझाव है
